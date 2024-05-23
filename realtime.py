@@ -25,7 +25,6 @@ class EKF:
         I = np.eye(self.H.shape[1])
         self.P = np.dot((I - np.dot(K, self.H)), self.P)
 
-
 # 카메라 초기화 함수
 def cam_init(cam_path=0):
     cap = cv2.VideoCapture(cam_path)
@@ -67,6 +66,8 @@ def ani(frame, cap, img_display, line, orig_line, error_line, ekf, timestamps, s
     error_y_data = error_line.get_ydata()
     error_y_data = np.append(error_y_data, ekf_error)[-100:]
     error_line.set_ydata(error_y_data)
+
+
 
     x_data = np.arange(len(y_data))
     line.set_xdata(x_data)
