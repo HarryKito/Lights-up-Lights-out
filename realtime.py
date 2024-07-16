@@ -93,7 +93,7 @@ def ani(frame, cap, img_display, line, orig_line, error_line, ekf, timestamps, s
 
 
 if __name__ == "__main__":
-    cap = cam_init(0)
+    cap = cam_init("rtsp://210.99.70.120:1935/live/cctv015.stream")
 
     # 소등 및 점등 감지
     # EKF 초기화
